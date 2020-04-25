@@ -1,12 +1,12 @@
 var express = require('express'),
 router = express.Router(),
-userCtrl = require('./user-controller');
+cdCtrl = require('./cd-controller');
 
 router.get('/', (req, res) => res.send('Hello World!'));
-router.post('/users', userCtrl.createUser);
-router.get('/users', userCtrl.getUsers);
-router.get('/users/:id', userCtrl.getUser);
-router.delete('/users/:id', userCtrl.deleteUser);
-router.put('/users/:id', userCtrl.updateUser);
+router.post('/', cdCtrl.createCD);
+router.get('/guitars', cdCtrl.getCDs);
+router.get('/guitars/:id', cdCtrl.getCD);
+router.delete('/delete/:id', cdCtrl.deleteCD);
+router.put('/guitars/:id', cdCtrl.updateCD);
 
 module.exports = router;
