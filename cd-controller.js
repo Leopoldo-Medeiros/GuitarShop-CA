@@ -1,7 +1,7 @@
-var CD = require('./cd-schema');
+var disc = require('./cd-schema');
 
 exports.createCD = function(req, res) { 
-    var newCD = new CD(req.body);
+    var newCD = new disc(req.body);
     console.log(req.body)
     newCD.save(function (err, cd) { 
         if (err) { 
@@ -13,7 +13,7 @@ exports.createCD = function(req, res) {
 };
 
 exports.getCDs = function(req, res) {
-  CD.find({}, function (err, cds) {
+  disc.find({}, function (err, cds) {
     if (err) {
       res.status(400).json(err); 
     } 
@@ -25,7 +25,7 @@ exports.getCDs = function(req, res) {
 };
 
 exports.getCD = function(req, res) {
-  CD.findOne({_id: req.params.id}, function (err, cd) {
+  disc.findOne({_id: req.params.id}, function (err, cd) {
     if (err) {
       res.status(400).json(err);
     } 
@@ -34,7 +34,7 @@ exports.getCD = function(req, res) {
 };
 
 exports.updateCD = function(req, res) {
-  CD.findOneAndUpdate({_id: req.params.id}, req.body, {new: true},function (err, cd) {
+  disc.findOneAndUpdate({_id: req.params.id}, req.body, {new: true},function (err, cd) {
     if (err) {
       res.status(400).json(err);
     } 
@@ -43,7 +43,7 @@ exports.updateCD = function(req, res) {
 };
 
 exports.deleteCD = function(req, res) {
-  CD.findByIdAndRemove(req.params.id, function (err, cd) {
+  disc.findByIdAndRemove(req.params.id, function (err, cd) {
     if (err) {
       res.status(400).json(err);
     } 

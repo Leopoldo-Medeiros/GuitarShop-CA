@@ -22,9 +22,8 @@ var cdSchema = new mongoose.Schema({
 
 });
 
-mongoose.model("CD", cdSchema)
 
-module.exports = mongoose.model('CD', cdSchema);
+module.exports = mongoose.model('cd', cdSchema);
 
 
 
