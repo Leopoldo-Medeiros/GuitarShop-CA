@@ -8,7 +8,7 @@ exports.createCD = function(req, res) {
             res.status(400).json(err);
         }
 
-        res.json(cd); 
+        res.redirect('back');
 });
 };
 
